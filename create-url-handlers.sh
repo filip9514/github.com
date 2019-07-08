@@ -107,3 +107,21 @@ bash -c "cd $HOME/$request ; git status  2>&1 | tee $HOME/github.com/report.txt 
 sudo chmod +x /usr/share/handlers/git-status
 xdg-mime default /usr/share/applications/git-status-handler.desktop x-scheme-handler/git-status
 
+
+echo -e '[Desktop Entry]
+Name=run-cmd
+Type=Application
+Exec=/usr/share/handlers/run-cmd %u
+MimeType=x-scheme-handler/run-cmd ;
+' | sudo tee /usr/share/applications/run-cmd-handler.desktop
+
+sudo update-desktop-database
+
+echo -e '#!/usr/bin/env bash
+request="${1#*://}"
+exec $request 2>&1 | tee $HOME/github.com/report.cmd.txt > /dev/null"
+' | sudo tee /usr/share/handlers/run-cmd
+
+sudo chmod +x /usr/share/handlers/run-cmd
+xdg-mime default /usr/share/applications/run-cmd-handler.desktop x-scheme-handler/run-cmd
+
