@@ -8,7 +8,7 @@ all subdirectories 2nd level are github repositories.
 branches are not solved in this version.  
 
 
-#recomanded way to initialize this project  
+# recomanded way to initialize this project  
 
 `mkdir ~/github.com`  
 
