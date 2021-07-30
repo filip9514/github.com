@@ -2,6 +2,7 @@
 
 export currentDir=$(pwd)
 cd $HOME
-tree -L 2 -H https://github.com -d $HOME/github.com > $HOME/github.com/tree.html
-firefox $HOME/github.com/index.html  2>&1 | tee /dev/null  > /dev/null &
+tree -L 2 -H https://gh/ -d $HOME/gh > $HOME/gh/report/tree.html
+#firefox $HOME/gh/report/index.html  2>&1 | tee /dev/null  > /dev/null &
+firefox http://localhost:5000/report/main
 cd $currentDir
